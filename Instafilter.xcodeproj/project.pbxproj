@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		793E84DA26400D6300AC3D2E /* ales-krivec-15949@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 793E84D926400D6300AC3D2E /* ales-krivec-15949@2x.jpg */; };
 		79A79E89263ECD090058B77E /* InstafilterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A79E88263ECD090058B77E /* InstafilterApp.swift */; };
 		79A79E8B263ECD090058B77E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A79E8A263ECD090058B77E /* ContentView.swift */; };
 		79A79E8D263ECD0B0058B77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A79E8C263ECD0B0058B77E /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		793E84D926400D6300AC3D2E /* ales-krivec-15949@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "ales-krivec-15949@2x.jpg"; path = "../../../../Desktop/100_days_swift_ui/HackingWithSwift/SwiftUI/project15-files/ales-krivec-15949@2x.jpg"; sourceTree = "<group>"; };
 		79A79E85263ECD090058B77E /* Instafilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instafilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A79E88263ECD090058B77E /* InstafilterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstafilterApp.swift; sourceTree = "<group>"; };
 		79A79E8A263ECD090058B77E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				79A79E88263ECD090058B77E /* InstafilterApp.swift */,
 				79A79E8A263ECD090058B77E /* ContentView.swift */,
 				79A79E8C263ECD0B0058B77E /* Assets.xcassets */,
+				793E84D926400D6300AC3D2E /* ales-krivec-15949@2x.jpg */,
 				79A79E91263ECD0B0058B77E /* Info.plist */,
 				79A79E8E263ECD0B0058B77E /* Preview Content */,
 			);
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79A79E90263ECD0B0058B77E /* Preview Assets.xcassets in Resources */,
+				793E84DA26400D6300AC3D2E /* ales-krivec-15949@2x.jpg in Resources */,
 				79A79E8D263ECD0B0058B77E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

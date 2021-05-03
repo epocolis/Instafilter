@@ -5,44 +5,60 @@
 //  Created by Leotis buchanan on 2021-05-02.
 //
 
+/**
+ Just like Core Data is Apple’s built-in framework for manipulating data, Core Image is their framework for manipulating images.
+ This isn’t drawing, or at least for the most part it isn’t drawing, but instead it’s about changing existing images: applying sharpening,
+ blurs, vignettes, pixellation, and more. If you ever used all the various photo effects available in Apple’s Photo Booth app,
+ that should give you a good idea of what Core Image is good for!
+ 
+ */
+import CoreImage
+import CoreImage.CIFilterBuiltins
 import SwiftUI
+
+
 
 struct ContentView: View {
     
+    @State private var image: Image?
     
-    /**
-     This will not print a the new value of blurAmount, because neither blurAmoun or the Struct struct wrapping it changes
-     whenever the users move the slider. The binding is directly changing the internally stored value. This means the property
-     observer is never being triggered.
-     
-     This can be   solved by creating a custom binding
-     
-     This also allow us to  do whatever you want inside these closures: you can call methods, run an algorithm to figure out the
-     correct value to use, or even just use random values – it doesn’t matter, as long as you return a value from get. So, if you
-     want to make sure you update UserDefaults every time a value is changed, the set closure of a Binding is perfect.
-     
-     
-     */
-    @State private var blurAmount: CGFloat = 0
+    
+      
+    
+    func loadImage(){
+        guard let inputImage = UIImage(named: "Example")
+        else {return}
+        
+        let beginImage = CIImage(image: inputImage)
+        
+        // more code to come
+        let context = CIContext()
+        let currentFilter = CIFilter.crystallize()
+        
+        currentFilter.inputImage = beginImage
+        currentFilter.radius = 200
+        
+        guard let outputImage = currentFilter.outputImage else {return}
+        
+        if let cgimg = context.createCGImage(outputImage,
+                                             from: outputImage.extent){
+            let uiImage = UIImage(cgImage: cgimg)
+            image = Image(uiImage: uiImage)
+        }
+        
+    }
+    
     
     var body: some View {
         
-        let blur = Binding<CGFloat>(
-            get: {
-                self.blurAmount
-            },
-            set: {
-                self.blurAmount = $0
-                print("New value is \(self.blurAmount)")
-            }
-        )
-        
         VStack {
-            Text("Hello, World")
-                .blur(radius: blurAmount)
-            
-            Slider(value: blur, in: 0...20)
+            image?
+                .resizable()
+                .scaledToFit()
         }
+        .onAppear(perform:
+            loadImage
+        )
     }
 }
 
